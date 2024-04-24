@@ -1,5 +1,5 @@
-
 import { Employee } from "./Person/Employee";
+
 
 let name = "thona";
 let lastName = "nogn";
