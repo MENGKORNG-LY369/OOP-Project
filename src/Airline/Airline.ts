@@ -1,4 +1,4 @@
-import { Employee } from "../Person/Person";
+import { Employee } from "../Person/Employee";
 import { Airplane } from "./Airplane";
 
 export class Airline {
