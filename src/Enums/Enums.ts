@@ -12,7 +12,7 @@ enum FlightStatus {
     Unknown = "Unknown",
 }
 
-// Enum for Payment status
+// Enum for Payment
 enum PaymentStatus {
     Unpaid = "Unpaid",
     Pending = "Pending",
@@ -24,6 +24,12 @@ enum PaymentStatus {
     Settling = "Settling",
     Settled = "Settled",
     Refunded = "Refunded",
+}
+enum PaymentMethod {
+    Mastercard = "Master Card",
+    VISA = "VISA Card",
+    JCB = "JCB Card",
+    AEC = "American Express card",
 }
 
 // Enum for seat
@@ -41,4 +47,27 @@ enum SeatType {
     ExtraLegRoom = "ExtraLegRoom"
 }
 
-export {FlightStatus, PaymentStatus, SeatClass, SeatType }
+// Enum for Booking
+enum BookingStatus {
+    Requested = "Requested",
+    Pending = "Pending",
+    Confirmed = "Confirmed",
+    CheckIn = "Check-in",
+    Cancelled = "Cancelled",
+    Abandoned = "Abandoned"
+}
+
+// Enum for Meal
+enum Meal {
+    Baby = "baby",
+    Bland = "bland",
+    Child = "child",
+    Toddler = "toddler",
+    Diabetic = "diabetic",
+    GlutenFree = "gluten-free",
+    NoSodiumOrNoSaltAdded = "No Sodium/Salt Added",
+    Halal = "Halal",
+    Hindu = "Hindu"
+}
+
+export { FlightStatus, PaymentStatus, SeatClass, SeatType, PaymentMethod, BookingStatus, Meal }
