@@ -1,45 +1,4 @@
-// Enum for Flight status
-enum FlightStatus {
-    Active = "Active",
-    Scheduled = "Scheduled",
-    Delayed = "Delayed",
-    Departed = "Departed",
-    Landed = "Landed",
-    InAir = "InAir",
-    Arrived = "Arrived",
-    Cancelled = "Cancelled",
-    Deverted = "Deverted",
-    Unknown = "Unknown",
-}
 
-// Enum for Payment status
-enum PaymentStatus {
-    Unpaid,
-    Pending,
-    Completed,
-    Failed,
-    Declined,
-    Cancelled,
-    Abandoned,
-    Settling,
-    Settled,
-    Refunded
-}
-
-// Enum for seat
-enum SeatClass {
-    Economy,
-    EconomyPlus,
-    PreferredEconomy,
-    Business,
-    FirstClass
-}
-enum SeatType {
-    Regular,
-    Accessible,
-    EmergencyExit,
-    ExtraLegRoom
-}
 
 export abstract class Person {
     constructor(private firstName: string, private lastName: string, private email: string, private age: number, private gender: string) {
