@@ -16,7 +16,6 @@ export class Airport {
         this.address = address;
         // this.flight = flight;
 
-
     }
     getFlight(): Flight[]{
         return this.flight;

@@ -3,13 +3,17 @@ import { FlightStatus } from "../Enums/Enums"
 import { Flight } from "./Flight"
 
 export class FlightInstance{
-    constructor (private flight: Flight , private flightStatus:FlightStatus, private airplane:Airplane){
+    constructor (
+        private flight: Flight , 
+        private status:FlightStatus, 
+        private airplane:Airplane
+    ){
         this.flight = flight
-        this.flightStatus = flightStatus
+        this.status = status
         this.airplane  = airplane
     }
-    UpdateStatus(): void{
-        this.flightStatus 
 
+    UpdateStatus(statusToUpdate: FlightStatus): void{
+        this.status = statusToUpdate
     }
 }
