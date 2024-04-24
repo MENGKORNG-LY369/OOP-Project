@@ -1,3 +1,4 @@
+import { FlightStatus, SeatType } from "./Enums/Enums";
 
 
 export abstract class Person {
