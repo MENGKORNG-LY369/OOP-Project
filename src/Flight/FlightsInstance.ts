@@ -9,7 +9,7 @@ export class FlightInstance{
         this.airplane  = airplane
     }
     UpdateStatus(): void{
-        
+        this.flightStatus 
 
     }
 }

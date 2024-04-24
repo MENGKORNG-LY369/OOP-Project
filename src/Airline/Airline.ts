@@ -1,3 +1,4 @@
+import { Employee } from "../Person/Person";
 import { Airplane } from "./Airplane";
 
 export class Airline {
