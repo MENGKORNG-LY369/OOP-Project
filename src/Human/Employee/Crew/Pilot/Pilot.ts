@@ -1,4 +1,5 @@
 import { PilotRole } from "../../../../Constant/Role";
+import { Customer } from "../../../Customer/Customer";
 import { Crew } from "../Crew";
 
 class Pilot extends Crew {
