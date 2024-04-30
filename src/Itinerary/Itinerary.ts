@@ -1,3 +1,3 @@
-class Itinerary{
+export class Itinerary{
     
 }
