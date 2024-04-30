@@ -1,4 +1,5 @@
 export class Airline {
+<<<<<<< HEAD
     constructor
         (
             private codeShare: string,
@@ -13,4 +14,9 @@ export class Airline {
     }
 
 
+=======
+    constructor(parameters) {
+        
+    }
+>>>>>>> AIRPLANE
 }
