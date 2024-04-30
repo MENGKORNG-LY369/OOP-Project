@@ -1,3 +1,5 @@
+import { Customer } from "../../../../Human/Customer/Customer";
+
 export class Baggage {
     constructor
         (

@@ -1,3 +1,6 @@
+import { Airplane } from "../Airplane";
+import { Baggage } from "./Baggage/Baggage";
+
 export class Cargo {
 
     constructor
