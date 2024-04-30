@@ -1,22 +1,23 @@
+import { Address } from "../Address";
 import { Gate } from "./Gate/Gate";
-
-export class Airport{
+export class Airport extends Address {
     constructor
-    (
-        private code:string,
-<<<<<<< HEAD
-        private gate:Gate
-=======
-        private gate:Gate[]=[]
+        (
+            street: string,
+            city: string,
+            zipcode: string,
+            country: string,
+            private code:string,
+            private gate:Gate[]=[],
 
->>>>>>> AIRLINE
-    ){
-        this.code = code;
-        this.gate = gate;
+        ) {
+            super(street, city, zipcode, country)
+              this.code = code; 
+              this.gate = gate;
 
     }
-    
-    method(type): type{
+
+    method(type): type {
 
     }
 

@@ -3,7 +3,7 @@ import { Airport } from "../Airport/Airport"
 export class Route{
     constructor
     (
-        private gateNumber: string,
+       
         private departure: Airport,
         private arrival: Airport,
         private distance: number,
@@ -11,7 +11,7 @@ export class Route{
         private flgith: Flight[]= []
 
     ){
-        this.gateNumber = gateNumber
+        
         this.departure = departure
         this.arrival = arrival
         this.distance = distance

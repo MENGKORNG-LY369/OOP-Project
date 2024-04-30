@@ -6,7 +6,7 @@ export class Address{
     public zipcode: string,
     public country: string,
     ){
-        this.street =street
+        this.street = street
         this.city =city
         this.zipcode =zipcode
         this.country = country
