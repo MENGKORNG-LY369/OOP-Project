@@ -1,3 +1,6 @@
+import { Flight } from "../../Airline/Flight/Flight"
+import { Airport } from "../Airport/Airport"
+
 export class Route{
     constructor
     (
