@@ -3,8 +3,8 @@ import { Payment } from "../Payment/Payment";
 
 export class Ticket {
     constructor(
-        protected seatClass: SeatClass,
-        protected payment: Payment
+        public seatClass: SeatClass,
+        public payment: Payment
     ) {
         this.seatClass = seatClass;
         this.payment = payment;

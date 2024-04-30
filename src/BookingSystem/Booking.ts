@@ -5,7 +5,7 @@ export class Booking {
     
     constructor(
         protected bookingNumber: string,
-        protected flight: FlightInstance,
+        public flight: FlightInstance,
         protected customer: Customer,
         protected seatType: SeatType,
         protected bookingStatus: BookingStatus
