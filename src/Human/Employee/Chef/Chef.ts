@@ -14,6 +14,6 @@ class Chef extends Employee {
       
     }
     addMeal(newMeal:string,quantity:number):void{
-        
+        this.passenger.addMeal(newMeal,quantity);
     }
   }
