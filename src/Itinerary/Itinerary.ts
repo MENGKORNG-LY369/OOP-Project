@@ -1,3 +1,4 @@
+import { Booking } from "../BookingSystem/Booking";
 import { FrontDeskOfficer } from "../Human/Employee/FrontDeskOfficer/FrontDeskOfficer";
 
 export class Itinerary{
