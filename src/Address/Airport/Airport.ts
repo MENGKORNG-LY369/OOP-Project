@@ -1,10 +1,10 @@
+import { Gate } from "./Gate/Gate";
+
 export class Airport{
     constructor
     (
         private code:string,
-        private gate:Gate[]
-
-
+        private gate:Gate
     ){
         this.code = code;
         this.gate = gate;

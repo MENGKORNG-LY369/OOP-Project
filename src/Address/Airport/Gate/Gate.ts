@@ -1,3 +1,5 @@
+import { GateStatus } from "../../../Constant/Gate"
+
 export class Gate {
     constructor
         (
