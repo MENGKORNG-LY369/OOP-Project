@@ -1,3 +1,5 @@
+
+import { Gate } from "./Gate/Gate";
 export class Airport{
     constructor
     (
