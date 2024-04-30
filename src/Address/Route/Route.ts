@@ -1,4 +1,4 @@
-import { FlightStatus } from "../../Constant/Flight"
+import { Flight } from "../../Airline/Flight/Flight"
 import { Airport } from "../Airport/Airport"
 export class Route{
     constructor
@@ -8,7 +8,7 @@ export class Route{
         private arrival: Airport,
         private distance: number,
         private duration: number,
-        private flgith: FlightStatus[]= []
+        private flgith: Flight[]= []
 
     ){
         this.gateNumber = gateNumber
