@@ -1,6 +1,7 @@
 import { BookingStatus } from "../../Constant/Booking";
 import { PaymentMethod, PaymentStatus } from "../../Constant/Payment";
 import { SeatType } from "../../Constant/Seat";
+import { Customer } from "../../Human/Customer/Customer";
 import { Booking } from "../Booking";
 
 export class Payment extends Booking {
@@ -27,7 +28,7 @@ export class Payment extends Booking {
         this.status = status;
     }
 
-    public processPayment() : boolean {
+    public processPayment(): boolean {
         return;
     }
 }

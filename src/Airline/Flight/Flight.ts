@@ -14,7 +14,7 @@ export  class Flight{
         this.flightInstance = flightInstance;
     }
     getFlightInstance(): FlightInstance[]{
-        return this.flightInstance;
+        return this.flightInstance; 
     }
     cancel(): void{
 

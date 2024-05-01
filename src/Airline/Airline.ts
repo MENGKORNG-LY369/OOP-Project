@@ -1,16 +1,25 @@
+import { Manager } from "../Human/Manager/Manager"
 import { Airplane } from "./Airplane/Airplane"
 
 export class Airline {
     constructor
         (
             private codeShare: string,
-            private airplane: Airplane[] = []
-        ) {
+            private manager: Manager,
+            private airplane: Airplane[]
+        ) 
+        {
         this.codeShare = codeShare
         this.airplane = airplane
+       
+
+        }
+    addAirplane(): void {
+        this.airplane 
 
     }
-    addAirplane(): void {
+    getCodeShare(): string {
+        return this.codeShare
 
     }
 
