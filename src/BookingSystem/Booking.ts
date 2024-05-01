@@ -1,3 +1,4 @@
+import { FlightInstance } from "../Airline/Flight/FlightInstance";
 import { BookingStatus } from "../Constant/Booking";
 import { SeatType } from "../Constant/Seat";
 import { Customer } from "../Human/Customer/Customer";
