@@ -1,11 +1,12 @@
 import { BookingStatus } from "../Constant/Booking";
 import { SeatType } from "../Constant/Seat";
+import { Customer } from "../Human/Customer/Customer";
 
 export class Booking {
     
     constructor(
         protected bookingNumber: string,
-        public flight: FlightInstance,
+        protected flight: FlightInstance,
         protected customer: Customer,
         protected seatType: SeatType,
         protected bookingStatus: BookingStatus
@@ -23,5 +24,9 @@ export class Booking {
 
     public updateStatus(newStatus: BookingStatus): void {
         this.bookingStatus = newStatus;
+    }
+
+    public getStatus(): BookingStatus {
+        return this.bookingStatus;
     }
 }
