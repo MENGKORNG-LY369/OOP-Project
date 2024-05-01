@@ -6,6 +6,7 @@ export class Cuisine {
         public category: MealType,
         public quantity: number
     ) {
+        this.meal = meal;
         this.category = category;
         this.quantity = quantity;
     }
