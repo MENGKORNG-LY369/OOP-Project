@@ -3,6 +3,7 @@ import { Customer } from "../../../../Human/Customer/Customer";
 export class Baggage {
     constructor
         (
+            private label: string,
             private passenger: Customer,
             private weight: number
 
