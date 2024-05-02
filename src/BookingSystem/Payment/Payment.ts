@@ -1,34 +1,28 @@
-import { BookingStatus } from "../../Constant/Booking";
-import { PaymentMethod, PaymentStatus } from "../../Constant/Payment";
-import { SeatType } from "../../Constant/Seat";
-import { Customer } from "../../Human/Customer/Customer";
-import { Booking } from "../Booking";
+import { BookingStatus, Customer, FlightInstance, PaymentMethod, PaymentStatus, SeatClass } from "../../Connector";
 
-export class Payment extends Booking {
+export class Payment {
     constructor(
-        bookingNumber: string,
-        flight: Flight,
-        customer: Customer,
-        seatType: SeatType,
-        bookingStatus: BookingStatus,
-        protected amount: number,
-        protected currency: string,
-        protected cardType: PaymentMethod,
-        protected cardNumber: string,
-        protected expireDate: string,
-        protected status: PaymentStatus
+        public customer: Customer,
+        public amount: number,
+        public currency: string,
+        public cardType: PaymentMethod,
+        public cardNumber: string,
+        public expireDate: string,
+        public seatclass: SeatClass,
+        private status: PaymentStatus
     ) {
-        super(bookingNumber, flight, customer, seatType, bookingStatus);
-
-        this.amount = amount;
-        this.currency = currency;
-        this.cardType = cardType;
-        this.cardNumber = cardNumber;
-        this.expireDate = expireDate;
-        this.status = status;
+        // this.amount = amount;
+        // this.currency = currency;
+        // this.cardType = cardType;
+        // this.cardNumber = cardNumber;
+        // this.expireDate = expireDate;
+        // this.status = status;
     }
 
-    public processPayment(): boolean {
-        return;
+    public getPaymentStatus(): PaymentStatus {
+        return this.status;
+    }
+    public updateStatus(newStatus: PaymentStatus): void {
+        this.status = newStatus
     }
 }

@@ -15,24 +15,21 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Pilot = void 0;
-var Connector_1 = require("../../../../Connector");
-var Pilot = /** @class */ (function (_super) {
-    __extends(Pilot, _super);
-    function Pilot(firstName, lastName, email, age, gender, role, flightInstance, passenger) {
-        if (passenger === void 0) { passenger = []; }
-        var _this = _super.call(this, firstName, lastName, email, age, gender, flightInstance) || this;
-        _this.role = role;
-        _this.flightInstance = flightInstance;
-        _this.passenger = passenger;
+exports.Manager = void 0;
+var Connector_1 = require("../../../Connector");
+var Manager = /** @class */ (function (_super) {
+    __extends(Manager, _super);
+    function Manager(firstName, lastName, email, age, gender, flightList) {
+        var _this = _super.call(this, firstName, lastName, email, age, gender) || this;
+        _this.flightList = flightList;
         return _this;
     }
-    Pilot.prototype.getSalary = function () {
-        return 1000;
+    Manager.prototype.getSalary = function () {
+        return 5000;
     };
-    Pilot.prototype.setFlight = function (flightInstance) {
-        this.flightInstance = flightInstance;
+    Manager.prototype.getFlights = function () {
+        return this.flightList;
     };
-    return Pilot;
-}(Connector_1.Crew));
-exports.Pilot = Pilot;
+    return Manager;
+}(Connector_1.Employee));
+exports.Manager = Manager;

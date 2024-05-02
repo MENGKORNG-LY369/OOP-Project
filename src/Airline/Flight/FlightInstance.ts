@@ -1,26 +1,37 @@
-import { FlightStatus } from "../../Constant/Flight";
-import { Airplane } from "../Airplane/Airplane";
-import { Seat } from "../Airplane/Seat/Seat";
-import { Flight } from "./Flight";
+import { Airplane, Customer, FlightStatus, Gate, Route } from "../../Connector";
 
-export class FlightInstance{
+export class FlightInstance {
     constructor
-    (
-        private flight:Flight,
-        private flightStatus:FlightStatus,
-        private airplane:Airplane,
-        private date:Date,
-        private seat:Seat[]
-    ){
-        this.flight=flight;
-        this.flightStatus=flightStatus;
-        this.airplane=airplane;
-        this.date=date;
-        this.seat=seat;
-    }
-    updateStatus(): void{
-        this.flightStatus
+        (
+            private flightStatus: FlightStatus,
+            private airplane: Airplane,
+            private route: Route,
+            private passenger: Customer,
+            private gate?: Gate,
+            private date: Date = new Date,
+        ) {
+        this.flightStatus = flightStatus;
+        this.airplane = airplane;
+        this.route = route;
+        this.date = date;
     }
 
+    public getGate(): Gate {
+        return this.gate;
+    }
+    public getPassender(): Customer {
+        return this.passenger;
+    }
 
+    public setGate(gate: Gate): void {
+        this.gate = gate;
+    }
+
+    public updateStatus(newStatus: FlightStatus): void {
+        this.flightStatus = newStatus;
+    }
+
+    public setAirplane(airplane: Airplane): void {
+        this.airplane = airplane;
+    }
 }

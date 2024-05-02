@@ -16,12 +16,13 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Passenger = void 0;
-var Customer_1 = require("../Customer");
+var Connector_1 = require("../../Connector");
 var Passenger = /** @class */ (function (_super) {
     __extends(Passenger, _super);
-    function Passenger(firstName, lastName, email, age, gender, phone, frequentFlyerNumber, booking, baggage, passportNumber, dateOfBirth, ticket, meal, trip, returnTicket) {
-        if (baggage === void 0) { baggage = []; }
-        var _this = _super.call(this, firstName, lastName, email, age, gender, phone, frequentFlyerNumber, booking, baggage) || this;
+    function Passenger(firstName, lastName, email, age, gender, phone, frequentFlyerNumber, passportNumber, dateOfBirth, ticket, meal, trip, returnTicket) {
+        if (meal === void 0) { meal = []; }
+        if (trip === void 0) { trip = []; }
+        var _this = _super.call(this, firstName, lastName, email, age, gender, phone, frequentFlyerNumber) || this;
         _this.passportNumber = passportNumber;
         _this.dateOfBirth = dateOfBirth;
         _this.ticket = ticket;
@@ -36,6 +37,7 @@ var Passenger = /** @class */ (function (_super) {
         _this.trip = trip;
         return _this;
     }
+    Passenger.prototype.getPassportNumber = function () { return this.passportNumber; };
     return Passenger;
-}(Customer_1.Customer));
+}(Connector_1.Customer));
 exports.Passenger = Passenger;

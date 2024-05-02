@@ -1,19 +1,19 @@
-import { Passenger } from "../../Customer/Passenger/Passenger";
-import { Employee } from "../Employee";
+import { Employee, Gender, Passenger } from "../../../Connector";
 
-class Chef extends Employee {
-    constructor(firstName: string,
-      lastName: string,
-      email: string,
-      age: number,
-      gender: string,
-      salary: number, 
-      private passenger:Passenger[]){
-      super(firstName, lastName, email, age, gender, salary,);
-      this.passenger = passenger;
-      
+export class Chef extends Employee {
+    constructor(
+        firstName: string,
+        lastName: string,
+        email: string,
+        age: number,
+        gender: Gender,
+        private passenger: Passenger[]
+    ) {
+        super(firstName, lastName, email, age, gender);
+        this.passenger = passenger;
     }
-    addMeal(newMeal:string,quantity:number):void{
-        this.passenger.addMeal(newMeal,quantity);
+
+    public getSalary(): number {
+        return 500
     }
-  }
+}

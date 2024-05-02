@@ -1,19 +1,26 @@
-import { Manager } from "../../Manager/Manager";
-import { Employee } from "../Employee";
+import { Employee, Gender, Itinerary } from "../../../Connector";
 
-class Controller extends Employee {
+export class Controller extends Employee {
     constructor(
-      firstName: string,
-      lastName: string,
-      email: string,
-      age: number,
-      gender: string,
-      salary: number,
-      public airplane: Airplane,
-      public manager: Manager
-    ) {
-      super(firstName, lastName, email, age, gender, salary);
-      this.airplane = airplane;
-      this.manager = manager;
+        firstName: string,
+        lastName: string,
+        email: string,
+        age: number,
+        gender: Gender,
+        private trips: Itinerary[] = []
+    ){
+        super(firstName, lastName, email, age, gender);
     }
-  }
+
+    public getSalary(): number {
+        return 1300;
+    }
+
+    public getCustomerTrips(): Itinerary[] {
+        return this.trips;
+    }
+
+    public addTrip(...cusTrips: Itinerary[]): void {
+        cusTrips.forEach(trip => { this.trips.push(trip) });
+    }
+}

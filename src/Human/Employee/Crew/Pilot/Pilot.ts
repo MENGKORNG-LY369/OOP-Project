@@ -1,10 +1,19 @@
-import { PilotRole } from "../../../../Constant/Role";
-import { Customer } from "../../../Customer/Customer";
-import { Crew } from "../Crew";
+import { Crew, Customer, FlightInstance, Gender, PilotRole } from "../../../../Connector";
 
-class Pilot extends Crew {
-    constructor(passenger:Customer[],private role: PilotRole) {
-      super(passenger);
-      this.role = role;
+export class Pilot extends Crew {        
+    constructor(
+        firstName: string,
+        lastName: string,
+        email: string,
+        age: number,
+        gender: Gender,
+        public role: PilotRole,
+    ){
+        super(firstName, lastName, email, age, gender)
+        this.role = role;
     }
-  }
+    getSalary(): number {
+        return 800;
+    }
+
+}

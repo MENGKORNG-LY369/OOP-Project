@@ -1,4 +1,4 @@
-import { Manager } from "../Human/Manager/Manager"
+import { Manager } from "../Human/Employee/Manager/Manager"
 import { Airplane } from "./Airplane/Airplane"
 
 export class Airline {
@@ -6,7 +6,7 @@ export class Airline {
         (
             private codeShare: string,
             private manager: Manager,
-            private airplane: Airplane[]
+            private airplane: Airplane[] = []
         ) 
         {
         this.codeShare = codeShare

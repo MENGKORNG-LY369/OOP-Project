@@ -1,8 +1,4 @@
-
-import { Baggage } from "../../Airline/Airplane/Cargo/Baggage/Baggage";
-import { Booking } from "../../BookingSystem/Booking";
-import { Person } from "../Person";
-
+import { Baggage, Booking, Gender, Person } from "../../Connector";
 export class Customer extends Person {
 
     constructor(
@@ -10,11 +6,11 @@ export class Customer extends Person {
         lastName: string,
         email: string,
         age: number,
-        gender: string,
-        private phone: string,
-        private frequentFlyerNumber: string,
-        private booking: Booking[],
-        private baggage: Baggage[] = []
+        gender: Gender,
+        public phone: string,
+        public frequentFlyerNumber: string,
+        public booking: Booking[] = [],
+        public baggage: Baggage[] = []
     ) {
         super(firstName, lastName, email, age, gender);
         this.phone = phone;

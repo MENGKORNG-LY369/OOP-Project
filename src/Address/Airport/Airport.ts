@@ -17,8 +17,4 @@ export class Airport extends Address {
 
     }
 
-    method(type): type {
-
-    }
-
 }

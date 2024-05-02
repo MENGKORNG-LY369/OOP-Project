@@ -1,10 +1,11 @@
+import { FlightInstance, Payment } from "../../Connector";
+
 export class BoardingPass {
     constructor(
-        private barCode: string
+        public barCode: string,
+        public flight: FlightInstance,
+        public payment: Payment,
     ) {
         this.barCode = barCode;        
-    }
-    public generateBarcode(): string {
-        return this.barCode;
     }
 }

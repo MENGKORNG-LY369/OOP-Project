@@ -1,18 +1,12 @@
-import { Airplane } from "../Airplane";
-import { Baggage } from "./Baggage/Baggage";
+import { Baggage } from "../../../Connector";
 
 export class Cargo {
-    constructor
-        (
-            private baggage: Baggage[] = [],
-
+    constructor(
+            public baggage: Baggage[] = [],
         ) {
         this.baggage = baggage;
-
     }
-    method(type): type {
-
+    public addBaggages(...baggages: Baggage[]): void {
+        baggages.forEach(b => this.baggage.push(b));
     }
-
-
 }

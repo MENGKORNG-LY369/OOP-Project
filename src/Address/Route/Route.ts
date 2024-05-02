@@ -3,7 +3,6 @@ import { Airport } from "../Airport/Airport"
 export class Route{
     constructor
     (
-       
         private departure: Airport,
         private arrival: Airport,
         private distance: number,

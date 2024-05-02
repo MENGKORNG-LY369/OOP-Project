@@ -1,19 +1,14 @@
-import { Person } from "../Person";
+import { Gender, Person } from "../../Connector";
 
-export class Employee extends Person {
+export abstract class Employee extends Person {
     constructor(
-      firstName: string,
-      lastName: string,
-      email: string,
-      age: number,
-      gender: string,
-      private salary: number
-    ) {
-      super(firstName, lastName, email, age, gender);
-      this.salary = salary;
+        firstName: string,
+        lastName: string,
+        email: string,
+        age: number,
+        gender: Gender,
+    ) { 
+        super(firstName, lastName, email, age, gender);
     }
-  
-    getSalary(): number {
-      return this.salary;
-    }
-  }
+    public abstract getSalary(): number;
+}

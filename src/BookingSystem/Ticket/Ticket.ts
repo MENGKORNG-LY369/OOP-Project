@@ -1,19 +1,26 @@
-import { SeatClass } from "../../Constant/Seat";
-import { Payment } from "../Payment/Payment";
+import { BoardingPass, CheckIn, Flight, Payment, PaymentStatus } from "../../Connector";
 
 export class Ticket {
     constructor(
-        public seatClass: SeatClass,
-        public payment: Payment
-    ) {
-        this.seatClass = seatClass;
-        this.payment = payment;
-    }
+        public payment: Payment,
+        public flight: Flight,
+        public checkIn?: CheckIn,
+        public boardingPass: BoardingPass[] = []
+    ) {}
 
-    public printTicket(): object {
-        return {
-            "passenger": this.payment.getPassenger(),
-            "seat class": this.seatClass,
+    public checkInProcess(): BoardingPass[] | undefined {
+        if (this.payment.getPaymentStatus() === PaymentStatus.Completed) { // checking the payment status
+            this.checkIn = new CheckIn(this, true);
+            return this.printBoardingPass()
         }
+        this.checkIn = new CheckIn(this, false);
+    }
+    private printBoardingPass(): BoardingPass[] {
+        const flightInstances = this.flight.getFlightInstances(this.payment.customer)
+        flightInstances.forEach(instance => {
+            const boardingPass = new BoardingPass("&#$234", instance, this.payment); // Create boarding pass
+            this.boardingPass.push(boardingPass);
+        });
+        return this.boardingPass;
     }
 }
