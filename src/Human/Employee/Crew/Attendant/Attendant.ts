@@ -7,12 +7,10 @@ export class Attendant extends Crew {
         email: string,
         age: number,
         gender: Gender,
-        salary: number,
-        public passenger: Customer[],
+        flightInstance: FlightInstance,
         public role: PilotRole,
-        public flightInstance: FlightInstance
     ) {
-        super(firstName, lastName, email, age, gender, flightInstance);
+        super(firstName, lastName, email, age, gender);
     }
     getSalary(): number {
         return 400;

@@ -18,6 +18,7 @@ export class Booking {
         private bookingStatus: BookingStatus,
         public payment?: Payment,
         public ticket?: Ticket,
+        public returnTicket: boolean = false
     ) {
         this.bookingNumber = bookingNumber;
         this.flight = flight;
@@ -41,7 +42,8 @@ export class Booking {
         cardNumber: string,
         expireDate: string,
         seatClass: SeatClass,
-        payStatus: PaymentStatus
+        payStatus: PaymentStatus,
+        returnTicket: boolean
     ): any {
         if (
             ((this.seatType == SeatType.Regular && amount >= 300) ||
@@ -54,9 +56,10 @@ export class Booking {
             const pay = new Payment(this.customer, amount, currency, cardType, cardNumber, expireDate, seatClass, payStatus);
             this.payment = pay;
             this.ticket = this.printTicket()
-            return this.ticket;
             this.flight.addPassenger(this.customer)
+            return this.ticket;
         }
+        this.returnTicket = returnTicket;
     }
 
     private printTicket(): Ticket {

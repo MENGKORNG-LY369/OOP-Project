@@ -1,4 +1,4 @@
-import { Employee, Gender, Itinerary } from "../../../Connector";
+import { Booking, Employee, Gender, Itinerary } from "../../../Connector";
 
 export class FrontDeskOfficer extends Employee {
     constructor(firstName: string,
@@ -11,7 +11,13 @@ export class FrontDeskOfficer extends Employee {
         super(firstName, lastName, email, age, gender);
         this.trip = trip;
     }
-    getSalary(): number {
+
+    public createTrips(...bookings: Booking[]): Itinerary[] {
+        this.trip.push(new Itinerary(this.email, bookings)) 
+        return this.trip;
+    }
+
+    public getSalary(): number {
         return 800
     }
 }

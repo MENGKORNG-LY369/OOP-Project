@@ -13,10 +13,7 @@ export class Gate {
         this.gateNumber = gateNumber
         this.status = status
     }
-    getBoardingPass(): BoardingPass[]{
+    public getBoardingPass(): BoardingPass[]{
         return this.boarding
-
     }
-  
-
 }

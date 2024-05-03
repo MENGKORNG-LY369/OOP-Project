@@ -1,12 +1,11 @@
-import { Booking } from "../BookingSystem/Booking";
-import { FrontDeskOfficer } from "../Human/Employee/FrontDeskOfficer/FrontDeskOfficer";
+import { Booking } from "../Connector";
 
-export class Itinerary{
-    constructor(private booking:Booking[],private deskOfficer:FrontDeskOfficer){
+export class Itinerary {
+    constructor(
+        private deskOfficerEmail: string,
+        private booking: Booking[],
+    ) {
         this.booking = booking;
-        this.deskOfficer = deskOfficer;
-    }
-    creatTrip():boolean{
-        return true;
+        this.deskOfficerEmail = deskOfficerEmail;
     }
 }

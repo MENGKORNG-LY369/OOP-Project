@@ -7,7 +7,7 @@ export class Chef extends Employee {
         email: string,
         age: number,
         gender: Gender,
-        private passenger: Passenger[]
+        private passenger: Passenger[] = []
     ) {
         super(firstName, lastName, email, age, gender);
         this.passenger = passenger;
@@ -15,5 +15,13 @@ export class Chef extends Employee {
 
     public getSalary(): number {
         return 500
+    }
+
+    public getPassenger(): Passenger[] {
+        return this.passenger;
+    }
+
+    public addPassenger(...passengers: Passenger[]): void {
+        passengers.forEach(passenger => this.passenger.push(passenger));
     }
 }

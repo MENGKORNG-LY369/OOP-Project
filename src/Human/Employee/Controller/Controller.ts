@@ -20,7 +20,7 @@ export class Controller extends Employee {
         return this.trips;
     }
 
-    public addTrip(...cusTrips: Itinerary[]): void {
+    public addTrip(cusTrips: Itinerary[]): void {
         cusTrips.forEach(trip => { this.trips.push(trip) });
     }
 }

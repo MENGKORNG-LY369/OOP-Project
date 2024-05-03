@@ -20,7 +20,7 @@ export class Flight {
     }
 
     public getFlightInstances(customer: Customer): FlightInstance[] {
-        return this.flightInstance.filter(instance => instance.getPassender().email === customer.email)
+        return this.flightInstance.filter(instance => instance.getOnePassenger(customer.email)?.email === customer.email)
     }
 
     public addSeat(...seats: Seat[]): void {

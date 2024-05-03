@@ -6,6 +6,7 @@ export enum MealType {
     Diabetic = "Diabetic",
     GlutenFree = "GlutenFree", 
     NoSodiumOrSalt = "NoSodium/Salt",
+    Khmer = "Khmer",
     Halal = "Halal",
     Hindu = "Hindu"
 }

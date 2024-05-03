@@ -9,14 +9,10 @@ export class Payment {
         public cardNumber: string,
         public expireDate: string,
         public seatclass: SeatClass,
-        private status: PaymentStatus
+        private status: PaymentStatus,
+        public returnTicket: boolean = false
     ) {
-        // this.amount = amount;
-        // this.currency = currency;
-        // this.cardType = cardType;
-        // this.cardNumber = cardNumber;
-        // this.expireDate = expireDate;
-        // this.status = status;
+
     }
 
     public getPaymentStatus(): PaymentStatus {

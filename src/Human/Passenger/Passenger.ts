@@ -1,30 +1,30 @@
-import { Cuisine, Customer, Gender, Itinerary, Ticket } from "../../Connector";
+import { Cuisine, Customer, Gate, Ticket } from "../../Connector";
 
-export class Passenger extends Customer {
+export class Passenger {
     constructor(
-        firstName: string,
-        lastName: string,
-        email: string,
-        age: number,
-        gender: Gender,
-        phone: string,
-        frequentFlyerNumber: string,
+        private customer: Customer,
         private passportNumber: string,
         private dateOfBirth: string,
         public ticket: Ticket,
         public meal: Cuisine[] = [],
-        public trip: Itinerary[] = [],
-        public returnTicket?: Ticket,
-
     ) {
-        super(firstName, lastName, email, age, gender, phone, frequentFlyerNumber);
         this.passportNumber = passportNumber;
         this.dateOfBirth = dateOfBirth;
         this.ticket = ticket;
         this.meal = meal;
-        this.returnTicket = returnTicket;
-        this.trip = trip;
     }
 
     public getPassportNumber(): string { return this.passportNumber; }
+
+    public getGateNumber(): Gate[] {
+        let gateList: Gate[] = [];
+        this.ticket.boardingPass.filter(board => {
+            gateList.push(board.flight.gate);
+        })
+        return gateList;
+    }
+
+    public choosingMeal(...meals: Cuisine[]): void {
+        meals.forEach(cuisine => this.meal.push(cuisine));
+    }
 }

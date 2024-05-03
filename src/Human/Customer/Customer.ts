@@ -5,7 +5,7 @@ export class Customer extends Person {
         firstName: string,
         lastName: string,
         email: string,
-        age: number,
+        age: number,    
         gender: Gender,
         public phone: string,
         public frequentFlyerNumber: string,
