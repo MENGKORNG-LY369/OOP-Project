@@ -134,8 +134,7 @@ const trip1 = officer1.createTrips(Cuz1Booking1, cuz2Booking1)
 
 // controller management (Controller)
 Controller1.addTrip(trip1)
-console.log(Controller1.getCustomerTrips());
-
+const listTrip = Controller1.getCustomerTrips();
 
 
 // Chef Managements (Chef)
